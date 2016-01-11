@@ -2,16 +2,30 @@
 <!-- basic_chat.aiml -->
 
     <category>
-        <pattern>HELLO</pattern>
+        <pattern>ПРИВЕТ</pattern>
         <template>
-            Well, hello!
+            Хммм, ну привет!
         </template>
     </category>
     
-    <category>
-        <pattern>WHAT ARE YU</pattern>
+	<category>
+        <pattern>ТЫ *</pattern>
         <template>
-            I'm a bot, <bot name="имя"/>!
+            Okay! <set name="name"><star></star></set>
+        </template>
+    </category>
+	
+    <category>
+        <pattern>КТО ТЫ</pattern>
+        <template>
+            Ты сказал, что я - <get name="name"/>, а я - <bot name="name"/> !
+        </template>
+    </category>
+	
+	  <category>
+        <pattern>ЗЛОЙ</pattern>
+        <template>
+            <get name="myName"/> - КРУШИТЬ!
         </template>
     </category>
 	
@@ -22,6 +36,15 @@
         </template>
     </category>
 	
+
+
+
+
+
+
+
+
+
 	<category>
     <pattern>ONE TIME I *</pattern>
     <template>
