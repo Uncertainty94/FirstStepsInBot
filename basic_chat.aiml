@@ -11,21 +11,24 @@
 	<category>
         <pattern>ТЫ *</pattern>
         <template>
-            Okay! <set name="name"><star></star></set>
+            Okay! <think><set name="name"><star></star></set></think>
         </template>
     </category>
 	
     <category>
         <pattern>КТО ТЫ</pattern>
         <template>
-            Ты сказал, что я - <get name="name"/>, а я - <bot name="name"/> !
+			<condition name="name">
+				<li value="">я - <bot name="name"/>!</li>
+				<li>Ты сказал, что я - <get name="name"/>, а я - <bot name="name"/>!</li>	
+			</condition>
         </template>
     </category>
 	
 	  <category>
         <pattern>ЗЛОЙ</pattern>
         <template>
-            <get name="myName"/> - КРУШИТЬ!
+            <get name="name"/> - КРУШИТЬ!
         </template>
     </category>
 	
