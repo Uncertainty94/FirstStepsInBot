@@ -19,7 +19,7 @@
         <pattern>КТО ТЫ</pattern>
         <template>
 			<condition name="name">
-				<li value="">я - <bot name="name"/>!</li>
+				<li value="">Меня зовут <formal><bot name="name"/></formal>!</li>
 				<li>Ты сказал, что я - <get name="name"/>, а я - <bot name="name"/>!</li>	
 			</condition>
         </template>
