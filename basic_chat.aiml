@@ -47,6 +47,13 @@
     </category>
 	
 	<category>
+        <pattern>WHO I LOVE</pattern>
+        <template>
+            Of course u love only Viktoria Kuznetsova! She's the best!!!
+        </template>
+    </category>
+	
+	<category>
     <pattern>ONE TIME I *</pattern>
     <template>
         <random>
