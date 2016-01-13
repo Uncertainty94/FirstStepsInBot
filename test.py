@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import aiml
 import pymorphy2
-import grammar
+import lexem
 
 # Create the kernel and learn AIML files
 kernel = aiml.Kernel()
@@ -27,7 +27,7 @@ while True:
         elif "собака" in message:       # Эта собака Максима
             resp = kernel.respond(message).split("~")
             start = resp[0]
-            newName = morph.parse(resp[1].decode("utf-8"))[0].inflect({grammar.Grammar.Case.datv}).word
+            newName = morph.parse(resp[1].decode("utf-8"))[0].inflect({lexem.Lexem.Case.datv}).word
             answer = start.decode("utf-8") + newName.title()
             print (answer)
 
