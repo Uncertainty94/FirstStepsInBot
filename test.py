@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import aiml
 import pymorphy2
 
@@ -9,12 +11,17 @@ kernel.setBotPredicate("name", "Melody")
 
 morph = pymorphy2.MorphAnalyzer()
 
-print(morph.normal_forms("ежи"))
 
+while True:
+    message = raw_input("Enter your message >> ")
+    # print(morph.normal_forms(message))
 
-# while True:
-#     message = raw_input("Enter your message >> ")
-#     if message == "quit":
-#         print ("Bye")
-#         exit()
-#     print (kernel.respond(message))
+    if message == "quit":
+        print ("Bye")
+        exit()
+    else:
+        tryparse = message.decode('utf-8').lower().encode('utf-8').replace(' ', '').split("от")
+        if tryparse[0] == "образуйнормальнуюформу":
+            print(morph.normal_forms(tryparse[1].decode('utf-8'))[0].encode('utf-8'))
+        else:
+            print (kernel.respond(message))
