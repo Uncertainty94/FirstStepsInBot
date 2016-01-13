@@ -32,10 +32,17 @@
         </template>
     </category>
 	
-	  <category>
+	<category>
         <pattern>ЗЛОЙ</pattern>
         <template>
             <get name="name"/> - КРУШИТЬ!
+        </template>
+    </category>
+	
+	<category>
+        <pattern>ЭТА СОБАКА *</pattern>
+        <template>
+            Эта собака принадлежит ~<star></star>
         </template>
     </category>
 	
@@ -61,6 +68,6 @@
             <li>What is it?</li>
         </random>
     </template>
-</category>
+	</category>
     
 </aiml>

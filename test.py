@@ -11,7 +11,13 @@ kernel.setBotPredicate("name", "Melody")
 
 morph = pymorphy2.MorphAnalyzer()
 
+# name = morph.parse("Максима".decode("utf-8"))[0]
+#
+# print (name)
+# print (name.tag)
+# print (name.inflect({"datv"}).word)
 
+# Эта Собака Максима
 while True:
     message = raw_input("Enter your message >> ")
     # print(morph.normal_forms(message))
@@ -24,4 +30,8 @@ while True:
         if tryparse[0] == "образуйнормальнуюформу":
             print(morph.normal_forms(tryparse[1].decode('utf-8'))[0].encode('utf-8'))
         else:
-            print (kernel.respond(message))
+            resp = kernel.respond(message).split("~")
+            start = resp[0]
+            newName = morph.parse(resp[1].decode("utf-8"))[0].inflect({"datv"}).word
+            qwe = start.decode("utf-8") + newName.title()
+            print (qwe)
