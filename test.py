@@ -11,12 +11,6 @@ kernel.setBotPredicate("name", "Melody")
 
 morph = pymorphy2.MorphAnalyzer()
 
-# name = morph.parse("Максима".decode("utf-8"))[0]
-#
-# print (name)
-# print (name.tag)
-# print (name.inflect({"datv"}).word)
-
 # Эта Собака Максима
 while True:
     message = raw_input("Enter your message >> ")
@@ -26,6 +20,7 @@ while True:
         print ("Bye")
         exit()
     else:
+        # Используя шаблон "Образуй нормальную форму от *" выведет номальную форму любого слова.
         tryparse = message.decode('utf-8').lower().encode('utf-8').replace(' ', '').split("от")
         if tryparse[0] == "образуйнормальнуюформу":
             print(morph.normal_forms(tryparse[1].decode('utf-8'))[0].encode('utf-8'))
