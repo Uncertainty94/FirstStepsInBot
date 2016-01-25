@@ -15,7 +15,7 @@ morph = pymorphy2.MorphAnalyzer()
 while True:
     message = raw_input("Enter your message >> ")
 
-    if message == "quit":
+    if message.lower() == "пока":
         print ("Пока")
         exit()
     else:
